@@ -15,10 +15,10 @@ export default ({ id }) => {
 
     return (
         <ul>
-            {repos.map(repositorio => (
-                <li key={repositorio.id}>
-                    <b>Name:</b> {repositorio.name}
-                    <b> Language:</b> {repositorio.language}
+            {repos.map(({id, name, language}) => (
+                <li key={id}>
+                    <b>Name:</b> {name}
+                    <b> Language:</b> {language}
                 </li>
             ))}
         </ul>
