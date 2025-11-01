@@ -1,4 +1,6 @@
+import styles from './RepoList.module.css';
 import { useEffect, useState } from "react";
+
 
 export default ({ id }) => {
     const [repos, setRepos] = useState([]);
@@ -14,13 +16,16 @@ export default ({ id }) => {
 
 
     return (
-        <ul>
-            {repos.map(({id, name, language}) => (
-                <li key={id}>
-                    <b>Name:</b> {name}
-                    <b> Language:</b> {language}
-                </li>
-            ))}
-        </ul>
+        <div className='container'>
+            <ul className={styles.list}>
+                {repos.map(({id, name, language, html_url}) => (
+                    <li className={styles.listItem} key={id}>
+                        <div className={styles.itemName}><b>Name:</b> {name}</div><br />
+                        <div className={styles.itemLanguage}><b> Language:</b> {language}</div><br />
+                        <a className={styles.itemLink} target='_blank' href={html_url}>View repository</a>
+                    </li>
+                ))}
+            </ul>
+        </div>
     )
 }
