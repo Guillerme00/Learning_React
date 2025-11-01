@@ -24,6 +24,9 @@ const Form = () => {
 
     return (
         <form>
+            <ul>
+                {[1,2,3,4,5].map(item => <li key={item}>{item}</li>)}
+            </ul>
             <input type="number" placeholder="Nota mat A" onChange={evento => setMateriaA(evento.target.value)}/>
             <input type="number" placeholder="Nota mat B" onChange={evento => setMateriaB(evento.target.value)}/>
             <input type="number" placeholder="Nota mat C" onChange={evento => setMateriaC(evento.target.value)}/>
